@@ -2016,18 +2016,37 @@
   }
 
   .noticeboard {
-    min-height: 420px;
+    min-height: 600px;
     border-width: 11px;
   }
 
   .achievement-note-paper {
-    width: min(150px, calc((100vw - 88px) / 3));
-    min-height: 96px;
+    width: min(180px, calc((100vw - 70px) / 3));
+    min-height: 112px;
     padding: 15px 5px 7px;
   }
 
   .association-note-title { margin-bottom: 4px; font-size: clamp(9px, 2.7vw, 12px); }
   .association-note-description { font-size: clamp(7px, 2.1vw, 10px); line-height: 1.2; }
+
+  .association-note--treasurer,
+  .association-note--secretary,
+  .association-note--talentexpo { top: 17%; }
+  .association-note--hackathon,
+  .association-note--trifusion,
+  .association-note--blindspot { top: 50%; }
+  .association-note--essay,
+  .association-note--shortfilm,
+  .association-note--techkathon { top: 83%; }
+  .association-note--treasurer,
+  .association-note--hackathon,
+  .association-note--essay { left: 18%; }
+  .association-note--secretary,
+  .association-note--trifusion,
+  .association-note--shortfilm { left: 50%; }
+  .association-note--talentexpo,
+  .association-note--blindspot,
+  .association-note--techkathon { left: 82%; }
 
   .skills-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2087,22 +2106,51 @@
 
 
   .project-doors.is-open .project-door.is-active {
-    left: 16px;
-    top: 42%;
-    width: 145px;
-    --door-end-left: 16px;
-    --door-end-top: 42%;
-    --door-end-width: 145px;
-    --door-end-height: 330px;
+    left: 50%;
+    top: 12px;
+    width: 96px;
+    height: 124px;
+    padding: 4px 4px 0;
+    transform: translateX(-50%);
+    animation: none;
+    --door-end-left: 50%;
+    --door-end-top: 12px;
+    --door-end-width: 96px;
+    --door-end-height: 124px;
   }
 
   .project-showcase {
-    top: auto;
+    top: 152px;
     right: 12px;
-    bottom: 16px;
-    width: calc(100vw - 174px);
+    bottom: 12px;
+    left: 12px;
+    width: auto;
+    max-height: none;
+    overflow-y: auto;
     transform: none;
+    animation: showcase-in 450ms 100ms ease both;
   }
+
+  .door-frame { height: 116px; padding: 4px; border-width: 3px; }
+  .door-panel { padding: 8px 3px 7px; }
+  .door-number { font-size: 20px; }
+  .door-label { font-size: 7px; letter-spacing: 0.02em; }
+  .door-mark { right: 4px; width: 7px; height: 7px; }
+  .door-project-logo {
+    top: 20px;
+    right: -72px;
+    width: 92px;
+    height: 76px;
+    padding: 5px;
+    border-width: 3px;
+  }
+  .project-door.is-active .door-project-logo {
+    animation: project-logo-emerge 650ms 350ms cubic-bezier(0.2, 0.75, 0.25, 1) forwards;
+  }
+  .project-close { position: sticky; top: 0; float: right; margin-bottom: 8px; }
+  .project-description { clear: both; min-height: 0; margin-bottom: 10px; font-size: 17px; }
+  .project-open-link { margin-bottom: 12px; }
+  .project-screenshots { clear: both; height: 220px; }
 
   .door-frame { height: 132px; }
   .door-number { font-size: 23px; }
