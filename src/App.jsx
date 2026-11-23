@@ -537,7 +537,7 @@ function App() {
           
           <img
             className="hero-portrait"
-            src="24f81815-f4ed-4514-8583-9930ade2359f-Photoroom.png"
+            src="/balaji-portrait.png"
             alt="Balaji"
           />
 
