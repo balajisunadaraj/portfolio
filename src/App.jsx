@@ -399,6 +399,7 @@ function AssociationNote({ boardRef, title, description, type }) {
 }
 
 function App() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [activeProject, setActiveProject] = useState(null)
   const [activeDoorRect, setActiveDoorRect] = useState(null)
   const [isMailComposerOpen, setIsMailComposerOpen] = useState(false)
@@ -516,12 +517,23 @@ function App() {
         <a className="wordmark" href="#home" aria-label="Portfolio home">
           Portfolio
         </a>
-        <nav aria-label="Main navigation">
+        <button
+          className="menu-toggle"
+          type="button"
+          aria-label={isMobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+          aria-expanded={isMobileMenuOpen}
+          aria-controls="main-navigation"
+          onClick={() => setIsMobileMenuOpen((open) => !open)}
+        >
+          <span /><span /><span />
+        </button>
+        <nav id="main-navigation" className={isMobileMenuOpen ? 'is-open' : ''} aria-label="Main navigation">
           {navigationItems.map((item) => (
             <a
               className="nav-link"
               href={`#${item.toLowerCase()}`}
               key={item}
+              onClick={() => setIsMobileMenuOpen(false)}
             >
               {item}
             </a>
