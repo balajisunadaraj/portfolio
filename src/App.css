@@ -2027,7 +2027,7 @@
   }
 
   .association-note-title { margin-bottom: 4px; font-size: clamp(9px, 2.7vw, 12px); }
-  .association-note-description { font-size: clamp(7px, 2.1vw, 10px); line-height: 1.2; }
+  .association-note-description { font-size: clamp(6px, 1.8vw, 8px); line-height: 1.15; }
 
   .association-note--treasurer,
   .association-note--secretary,
@@ -2152,8 +2152,11 @@
   .project-open-link { margin-bottom: 12px; }
   .project-screenshots { clear: both; height: 340px; }
   .project-screenshot-list {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 1fr);
     gap: 8px;
+    max-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
   }
   .project-screenshot-item {
     width: 100%;
@@ -2165,7 +2168,7 @@
   .project-screenshot-row {
     grid-auto-flow: row;
     grid-auto-columns: auto;
-    grid-template-rows: none;
+    grid-template-columns: minmax(0, 1fr);
     overflow-x: hidden;
     overflow-y: auto;
   }
