@@ -2016,18 +2016,18 @@
   }
 
   .noticeboard {
-    min-height: 600px;
+    min-height: 680px;
     border-width: 11px;
   }
 
   .achievement-note-paper {
-    width: min(150px, calc((100vw - 92px) / 3));
-    min-height: 88px;
+    width: min(130px, calc((100vw - 92px) / 3));
+    min-height: 80px;
     padding: 13px 4px 6px;
   }
 
-  .association-note-title { margin-bottom: 3px; font-size: clamp(8px, 2.2vw, 10px); }
-  .association-note-description { font-size: clamp(5px, 1.5vw, 7px); line-height: 1.1; }
+  .association-note-title { margin-bottom: 3px; font-size: clamp(3px, 2vw, 7px); }
+  .association-note-description { font-size: clamp(2px, 1vw, 5px); line-height: 1.1; }
 
   .association-note--treasurer,
   .association-note--secretary,
